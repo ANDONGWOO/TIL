@@ -59,6 +59,8 @@
 
 ![하나](README.assets/num1.png)
 
+![num1](README.assets/num1.png)
+
 ##   Blockquotes (인용문)
 
 ```>```를 통해 인용문을 작성
