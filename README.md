@@ -1,3 +1,5 @@
+
+
 # 마크다운 문법정리
 
 * Heading
@@ -43,9 +45,11 @@
 
 ## Fenced Code block
 
-
+```text```
 
 ## Inline Code block
+
+`text`
 
 ## Link
 
@@ -53,11 +57,42 @@
 
 ## 이미지
 
+![하나](README.assets/num1.png)
+
 ##   Blockquotes (인용문)
 
-##  Table (표)
+```>```를 통해 인용문을 작성
 
-##  text 강조
+##  Table (표)
+```
+| text     | text | text |
+| -------- | ---- | ---- |
+| text     | text | text |
+| **text** | text | text |
+```
+| text     | text | text |
+| -------- | ---- | ---- |
+| text     | text | text |
+| **text** | text | text |
+##   text강조
+
+굵게
+
+```**text**```
+
+```__text__```
+
+```**te**xt```
+
+기울임
+
+```*text*```
+
+```_text_```
+
+```*te*xt```
+
+
 
 ##  수평선
 
