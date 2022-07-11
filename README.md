@@ -45,7 +45,10 @@
 
 ## Fenced Code block
 
-```text```
+```
+text
+text
+```
 
 ## Inline Code block
 
@@ -53,7 +56,7 @@
 
 ## Link
 
-```[문자열](uri)```을 통해 링크를 작성 가능
+`[문자열](uri)`을 통해 링크를 작성 가능
 
 ## 이미지
 
