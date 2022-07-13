@@ -2,5 +2,11 @@
 #sum(), len() 함수 사용금지
 numbers = [3, 10, 20]
 
+total = 0
 
-    
+rotation=0
+
+for i in numbers:
+    total += i
+    rotation +=1
+print(total/rotation)
