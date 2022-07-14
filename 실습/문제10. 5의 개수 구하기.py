@@ -3,3 +3,12 @@
 
 numbers = [7, 17, 10, 5, 4, 3, 17, 5, 2, 5]
 
+exoneration=5
+
+rotation=0
+for char in numbers:
+
+        if char==exoneration:
+            rotation += 1
+            
+print(rotation)
