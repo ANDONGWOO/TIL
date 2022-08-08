@@ -13,3 +13,4 @@ elif b==c:
 elif a!=b!=c:
     s=max(a,b,c)*100
 print(s)
+ 
