@@ -154,3 +154,88 @@ is_drinking  smoking  AVG(mod(weight,(height*height)))
 1            3        69.4941839971801
 
 ```
+# 8/19 복습
+
+SELECT id, gender
+FROM healthcare
+LIMIT 5;
+id  gender
+--  ------
+1   1     
+2   2     
+3   2     
+4   1     
+5   2 
+
+-- 성별 1(남자), 2(여자)
+SELECT id,CASE WHEN gender=1 THEN '남자'WHEN gender=2 THEN '여자'end as 성별
+FROM healthcare
+LIMIT 50;
+id  성별
+--  --  
+1   남자
+2   여자
+3   여자
+4   남자
+5   여자
+
+-- 흡연(smoking)
+
+SELECT id,CASE WHEN smoking=1 THEN '비흡연자'WHEN smoking=2 THEN '흡연자' WHEN smoking=3 THEN '헤비스모커' ELSE '무응답' END as 흡연자
+FROM healthcare
+LIMIT 50;
+
+id  흡연자  
+--  -----
+1   비흡연자
+2   비흡연자
+3   비흡연자
+4   비흡연자
+5   비흡연자
+6   헤비스모커
+7   헤비스모커
+8   헤비스모커
+9   비흡연자
+10  비흡연자
+11  비흡연자
+12  헤비스모커
+13  헤비스모커
+14  비흡연자
+15  비흡연자
+16  헤비스모커
+17  비흡연자
+18  비흡연자
+19  헤비스모커
+20  비흡연자
+21  비흡연자
+22  비흡연자
+23  비흡연자
+24  헤비스모커
+25  비흡연자
+26  비흡연자
+27  흡연자
+28  비흡연자
+29  흡연자
+30  비흡연자 
+31  비흡연자
+32  비흡연자
+33  헤비스모커
+34  비흡연자
+35  비흡연자
+36  비흡연자
+37  비흡연자
+38  흡연자
+39  비흡연자
+40  비흡연자
+41  흡연자
+42  헤비스모커
+43  비흡연자
+44  비흡연자
+45  흡연자
+46  비흡연자
+47  흡연자
+48  비흡연자
+49  헤비스모커
+50  비흡연자
+
+
