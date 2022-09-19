@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="password" name="password" id="password">
+    <input type="password" name="password_confirmation" id="password_confirmation">
+    <input type="button" onclick="t0()" value="확인">
+  </form>
+  <script >
+    function t0(){
+      var t1 = document.getElementById('password').value;
+      var t2 = document.getElementById('password_confirmation').value;
+      if (t1.length<8){
+        alert('비밀번호는 8글자이상이어야 함') /*비밀번호 8글자이상아니면(7글자이하면)*/
+      }
+        if (t1!=t2){
+          alert('비밀번호 불일치')/*t1이랑 t2가 불일치하면*/   
+        }
+        else{
+          alert('비밀번호 일치')/*t1이랑 t2가 일치하면*/  
+        }
+    }
+    
+
+  </script>
+</body>
+</html>
