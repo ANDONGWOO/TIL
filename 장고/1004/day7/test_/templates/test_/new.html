@@ -1,0 +1,7 @@
+<h1>글쓰기</h1>
+
+<form action="{% url 'day7:create' %}" method="POST">
+    {% csrf_token %}
+    {{ test_from.as_p }}
+    <input type="submit" value="글쓰기">
+</form>
