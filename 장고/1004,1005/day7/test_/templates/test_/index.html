@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load static %} <!-- static에서 경로 읽고 -->
+
+{% load django_bootstrap5 %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+{% block body %}
+    <h1>게시판</h1>
+    <div class="d-flex flex-column">
+        <img src="{% static 'images/static.jpg' %}" alt="" >
+        <a href="{% url 'day7:create' %}" class="mb-5">글쓰기</a>  
+    </div>
+    {% for article in articles %}
+    <h3><a href="{% url 'day7:detail' article.pk %}">{{ article.title }}</a></h3>
+    <p>{{ article.created_at }} | {{ article.update_at }}</p>
+    <hr>
+    {% endfor %}
+{% endblock body %}
