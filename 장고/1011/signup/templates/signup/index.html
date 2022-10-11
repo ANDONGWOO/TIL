@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block body %}
+  <h1>목록</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">pk</th>
+        <th scope="col">username</th>
+        <th scope="col">email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in users %}
+        <tr>
+          <th scope="row">{{ i.pk }}</th>
+          <td>
+            <a href="{% url 'signup:detail' i.pk %}">{{ i.username }}
+              <a></td>
+              <td>{{ i.email }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endblock body %}
