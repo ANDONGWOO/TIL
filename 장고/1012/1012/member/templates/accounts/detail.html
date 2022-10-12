@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock css %}
+{% block body %}
+  <h1>회원 조회</h1>
+  <h2>{{ user.pk }}</h2>
+  <h2>{{ user.username }}</h2>
+  <h2>{{ user.email }}</h2>
+  <a href="{% url 'accounts:main' %}">확인</a>
+{% endblock %}
+{% bootstrap_javascript %}
