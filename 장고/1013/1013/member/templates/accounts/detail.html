@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock css %}
+{% block body %}
+  <h1>회원 조회</h1>
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ user_detail.pk }}</th>
+        <th>{{ user_detail.username }}</th>
+        <p>{{ user_detail.email }}{{ user_detail.full_name }}</p>
+      </tr>
+    </thead>
+  </table>
+  <a href="{% url 'member:update' %}">수정</a>
+  <a href="{% url 'member:main' %}">확인</a>
+
+{% endblock body %}
+{% bootstrap_javascript %}

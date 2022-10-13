@@ -1,0 +1,40 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% bootstrap_css %}
+    {% block css %}{% endblock css %}
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark ">
+      <div class="container-fluid ">
+        <a class="navbar-brand text-light" href="#">Navbar</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <div class="container d-flex">
+              {% if request.user.is_authenticated %}
+                <h3 class="text-light">{{ request.user }}</h3>
+                <a href="{% url 'member:logout' %}">로그아웃</a>
+              {% else %}
+                <a class="nav-link text-light" href="{% url 'member:login' %}">로그인</a>
+                <a class="nav-link text-light" href="{% url 'member:create' %}">회원가입</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      {% block body %}{% endblock body %}
+    </div>
+    {% bootstrap_javascript %}
+  </body>
+
+</html>
