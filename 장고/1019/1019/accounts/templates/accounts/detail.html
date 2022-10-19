@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock css %}
+{% block body %}
+  <h1>조회</h1>
+  {{ user.username }}
+  <h3>작성한 글목록</h3>
+  <p>{{ user.article_set.count }}개를 작성하였습니다.</p>
+  {% bootstrap_javascript %}
+{% endblock body %}
