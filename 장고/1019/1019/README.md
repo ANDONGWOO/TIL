@@ -3,6 +3,7 @@
 * 댓글삭제x
 * 'function' object has no attribute 'objects'/AttributeError
 * from xml.etree.ElementTree import Comment: 제거
+* 해결
 
 # 1019 
 
