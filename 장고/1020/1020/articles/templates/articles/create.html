@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock css %}
+{% block body %}
+  <h1>생성</h1>
+  <form action="{% url 'articles:create' %}" methdo="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form article_Form %}
+    {% bootstrap_button button_type="submit" content="작성"%}
+  </form>
+  {% bootstrap_javascript %}
+{% endblock body %}
