@@ -1,7 +1,7 @@
 
 from django.shortcuts import render,redirect
 from .forms import ArticleForm,CommentForm
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def create(request):
@@ -16,3 +16,6 @@ def create(request):
         'article_Form':article_Form
     }
     return render(request, 'articles/create.html',context)
+
+def index(request):
+    return render(request, "articles/index.html")
