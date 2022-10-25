@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block body %}
+  <h1>{{ user.username }}님의 프로필</h1>
+  {% comment %} <p>{{ user.email }}|{{ user.full_name }}</p> {% endcomment %}
+  <p>팔로우{{ user.followings.count }} | 팔로워{{ user.followers.count }}</p>
+  {% for i in user.followings.all  %}
+  <p>팔로우 목록:{{ i }}</p>
+  {% endfor %}
+
+  {% for i in user.followers.all  %}
+  <p>팔로워 목록:{{ i }}</p>
+  {% endfor %}
+
+  {% if request.user != user %} 
+  <form action="{% url 'accounts:follow' user.pk %}" methdo="POST">
+  {% if request.user.is_authenticated %}
+    {% csrf_token %}
+      {% if request.user in user.followers.all %}
+        {% bootstrap_button button_type="submit" content="팔로우 취소"%}
+      {% else %}
+        {% bootstrap_button button_type="submit" content="팔로우"%}
+      {% endif %}
+  </form>
+  {% else %}
+    {% bootstrap_button button_type="submit" content="로그인 필요합니다"%}
+  {% endif %}
+  {% endif %}
+
+
+  
+  <div class="row">
+    <div class="col-6">
+      <h3>작성한 글</h3>
+      <p class="text-muted">{{ user.article_set.count }}개를 작성하였습니다.</p>
+      {% for article in user.article_set.all %}
+        <p>
+          {{ forloop.counter }}
+          <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>
+        </p>
+      {% endfor %}
+    </div>
+    <div class="col-6">
+      <h3>작성한 댓글</h3>
+      <p class="text-muted">{{ user.comment_set.count }}개를 작성하였습니다.</p>
+      {% for comment in user.comment_set.all %}
+        <p>
+          {{ forloop.counter }}
+          <a href="{% url 'articles:detail' comment.article_id %}">{{ comment.content }}</a>
+        </p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock body %}
