@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% block css %}{% endblock css %}
+{% block body %}
+  <h1>목록</h1>
+  {% for i in article_index %}
+    <div class="card m-3" style="width: 100;">
+      <a href="{% url 'articles:detail' i.pk %}">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            {{ i.pk }}</li>
+          <li class="list-group-item">{{ i.title  }}</li>
+          <li class="list-group-item">{{ i.content }}</li>
+        </ul>
+      </a>
+    </div>
+  {% endfor %}
+  {% bootstrap_javascript %}
+{% endblock body %}
