@@ -17,3 +17,4 @@ while 1:
         print(a,b,'= No permutation')
     else:
         print(a,b,'=',h())
+#메모리 초과
