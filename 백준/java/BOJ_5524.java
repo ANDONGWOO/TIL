@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**
- * BOJ_5524
- */
+
 public class BOJ_5524 {
 
     public static void main(String[] args) {
