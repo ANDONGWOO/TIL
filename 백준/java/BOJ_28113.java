@@ -9,7 +9,7 @@ public class BOJ_28113 {
         int a= in.nextInt();
         int b = in.nextInt();
         int c = in.nextInt();
-        if(b<c){//100원 동전 n*100  크거나 같다
+        if(b<c){
             System.out.println("Bus");
         }else if(b>c){
             System.out.println("Subway");
