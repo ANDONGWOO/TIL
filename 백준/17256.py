@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open(".txt", "r")
+sys.stdin = open("17256.txt", "r")
 
 a=list(input().split())
 b=list(input().split())
