@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open("28289.txt", "r")
+sys.stdin = open("1284.txt", "r")
 
 while 1:
     n = input()
