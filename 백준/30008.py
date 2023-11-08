@@ -6,23 +6,26 @@ sys.stdin = open("30008.txt", "r")
 n,k=map(int,input().split())
 g=list(map(int,input().split()))
 q=[]
+
+w=0
 for i in range(k):
-    if 0<=g[i]<=4:
-        q.append(1)
-    if 4<=g[i]<=11:
-        q.append(2)
-    if 11<=g[i]<=23:
-        q.append(3)
-    if 23<=g[i]<=40:
-        q.append(4)
-    if 40<=g[i]<=60:
-        q.append(5)
-    if 60<=g[i]<=77:
-        q.append(6)
-    if 77<=g[i]<=89:
-        q.append(7)
-    if 89<=g[i]<=96:
-        q.append(8)
-    if 96<=g[i]<=100:
-        q.append(9)
-print(q)
+    w=(g[i]*100)//n
+    if 0<=w<=4:
+        q=1
+    elif 4<=w<=11:
+        q=2
+    elif 11<=w<=23:
+        q=3
+    elif 23<=w<=40:
+        q=4
+    elif 40<=w<=60:
+        q=5
+    elif 60<=w<=77:
+        q=6
+    elif 77<=w<=89:
+        q=7
+    elif 89<=w<=96:
+        q=8
+    elif 96<=w<=100:
+        q=9
+    print(q,end=" ")
